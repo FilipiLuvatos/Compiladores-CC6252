@@ -1,0 +1,163 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reconhecedor </title>
+</head>
+
+<body>
+    <center>
+        <h2>Reconhecedor</h2>
+
+        <label for="strNPC">Digite para reconhecer</label><br>
+        <input type="text" id="numCPF2"><br><br>
+
+        <input type="submit" onclick="captura()" value="Verificar">
+
+
+        <h2 id="mostra"></h2>
+
+        <h2 id="mostra2"></h2>
+
+        <h2 id="mostra3"></h2>
+
+        <script>
+            var aux
+            var x = 0, y = 0
+            function erroIF() {
+
+
+                mostra.style.color = "#e60000";
+                var aux2 = "Palavra não aceita erro no if"
+                document.getElementById('mostra').innerHTML = aux2;
+                document.getElementById('mostra2').innerHTML = aux;
+                return 0
+
+
+            }
+            function erroELSE() {
+
+                    alert("Entrou")
+
+                mostra.style.color = "#e60000";
+                var aux2 = "Palavra não aceita erro no else"
+                document.getElementById('mostra').innerHTML = aux2;
+                document.getElementById('mostra2').innerHTML = aux;
+                return 0
+
+            }
+            function aceita() {
+
+                
+
+
+                    var aux2 = "Palavra aceita"
+                    mostra.style.color = "#00b300";
+                    document.getElementById('mostra').innerHTML = aux2;
+                    document.getElementById('mostra2').innerHTML = aux;
+
+              
+             
+
+            }
+            function erradoCaracter() {
+
+
+
+                var aux2 = "Caracter Inválido"
+                mostra.style.color = "#e60000";
+                document.getElementById('mostra').innerHTML = aux2;
+                document.getElementById('mostra2').innerHTML = aux;
+
+
+            }
+
+
+
+
+            function captura() {
+
+                aux = document.getElementById('numCPF2').value;
+
+                for (let i = 0; i < aux.length; i++) {
+
+
+                    if (aux[i] == "a" || aux[i] == "b" || aux[i] == "e" || aux[i] == "l" || aux[i] == "s" || aux[i] == "i" || aux[i] == "f") {
+
+                        if (aux[i] == "i") {
+
+                            if (aux[i + 1] == "f") {
+
+                                x = 1
+
+                            } else {
+
+                                erroIF()
+
+                            }
+
+                        }
+
+                        else if (aux[i] == "e") {
+
+                            if (aux[i + 1] == "l") {
+
+                                if (aux[i + 2] == "s") {
+
+                                    if (aux[i + 3] == "e") {
+
+                                        y = 1
+
+                                    } else erroELSE()
+                                }
+                            }
+
+
+
+
+                        }
+
+
+                        aceita()
+
+                    } else {
+
+                        erradoCaracter()
+
+                    }
+                }
+                
+            }
+            /*  for (let i = 0; i < aux.length; i++) {
+
+                 if (aux[i] == "e") {
+
+                    if (aux[i + 1] == "l") {
+
+                        if (aux[i + 2] == "s") {
+
+                            if (aux[i + 3] == "e") {
+
+                                y = 1
+
+                            } else erroELSE()
+                        }
+                    }
+
+
+
+
+                } else {
+
+
+                }
+            }
+
+                aceita()
+
+            } */
+        </script>
+    </center>
+</body>
+
+</html>
